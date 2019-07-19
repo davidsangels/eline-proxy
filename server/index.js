@@ -2,11 +2,13 @@ var express  = require('express');
 var app      = express();
 var httpProxy = require('http-proxy');
 var apiProxy = httpProxy.createProxyServer();
-// var reservation = 'http://localhost:3001';
-// var imgsGallery = 'http://localhost:3002';
-var reviews = 'http://localhost:3003';
-const port = 3000;
+var reservation = 'http://13.57.205.162';
+var imgsGallery = 'http://13.56.158.243';
+var reviews = 'http://18.224.181.77';
+const port = process.env.PORT || 3000;
 
+app.use(express.static('public'));
+app.use('/', express.static('public'));
 app.use('/:id', express.static('public'));
 
 // RESERVATION:
