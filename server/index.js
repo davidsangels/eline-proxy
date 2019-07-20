@@ -12,12 +12,12 @@ app.use('/', express.static('public'));
 app.use('/:id', express.static('public'));
 
 // RESERVATION:
-app.get('/bookings', (req, res) => {
+app.get('/bookings/:idPlace', (req, res) => {
   apiProxy.web(req, res, {target: reservation});
 });
 
 // IMAGES GALLERY:
-app.get('/data', (req, res) => {
+app.get('/data/:idPlace', (req, res) => {
   apiProxy.web(req, res, {target: imgsGallery});
 });
 
