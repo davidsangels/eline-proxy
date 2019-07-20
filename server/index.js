@@ -17,7 +17,7 @@ app.get('/bookings/:idPlace', (req, res) => {
 });
 
 // IMAGES GALLERY:
-app.get('/data/:idPlace', (req, res) => {
+app.get('/data/:id', (req, res) => {
   apiProxy.web(req, res, {target: imgsGallery});
 });
 
